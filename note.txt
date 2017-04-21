@@ -1,0 +1,40 @@
+I found that it worked this way in Python shell:
+
+C02S10ZNG8WL:PythonLab3 patricia.xiao$ python
+Python 2.7.12 (v2.7.12:d33e0cf91556, Jun 26 2016, 12:10:39) 
+[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from PIL import Image
+>>> from os import listdir
+>>> from os.path import isfile, join
+>>> onlyfiles = [ f for f in listdir(mypath) if isfile(join(mypath,f)) ]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'mypath' is not defined
+>>> mypath = "./"
+>>> onlyfiles = [ f for f in listdir(mypath) if isfile(join(mypath,f)) ]
+>>> onlyfiles = [ f for f in listdir(mypath) ]
+>>> onlyfiles = [ f for f in listdir(mypath) if isfile(join(mypath,f)) ]
+>>> onlyfiles
+['markov.py', 'text_processing.zip', 'word_analyzer.py']
+>>> onlyfiles
+['markov.py', 'text_processing.zip', 'word_analyzer.py']
+>>> onlyfiles = [ f for f in listdir(mypath) if isfile(join(mypath,f)) ]
+>>> onlyfiles
+['.DS_Store', '000001.jpg.webp', 'markov.py', 'text_processing.zip', 'word_analyzer.py']
+>>> 
+
+C02S10ZNG8WL:PythonLab3 patricia.xiao$ python
+Python 2.7.12 (v2.7.12:d33e0cf91556, Jun 26 2016, 12:10:39) 
+[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from PIL import Image
+>>> mypath = "./"
+>>> from os import listdir
+>>> from os.path import isfile, join
+>>> onlyfiles = [ f for f in listdir(mypath) if isfile(join(mypath,f)) ]
+>>> onlyfiles
+['.DS_Store', '000001.jpg.webp', 'markov.py', 'text_processing.zip', 'word_analyzer.py']
+>>> im = Image.open("000001.jpg.webp").convert("RGB")
+>>> im.save("test.jpg", "jpeg")
+>>> 
