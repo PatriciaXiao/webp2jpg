@@ -6,7 +6,7 @@ def load_image(path, name, FORMAT="RGB"):
 	im = Image.open(fullname).convert(FORMAT)
 	return im
 
-def save_image(path, name, FORMAT="jpeg"):
+def save_image(im, path, name, FORMAT="jpeg"):
 	fullname = os.path.join(path, name)
 	im.save(fullname, FORMAT)
 	pass
